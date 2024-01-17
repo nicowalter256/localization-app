@@ -38,6 +38,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  shared_preferences: ^2.0.13
+  
 
 dev_dependencies:
   flutter_test:

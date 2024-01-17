@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:localization_app/class/language.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:localization_app/class/constants.dart';
+import 'package:localization_app/main.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,8 +25,8 @@ class HomeScreen extends StatelessWidget {
               ),
               onChanged: (Language? language) async {
                 if (language != null) {
-                  // Locale _locale = await setLocale(language.languageCode);
-                  // MyApp.setLocale(context, _locale);
+                  Locale _locale = await setLocale(language.languageCode);
+                  MyApp.setLocale(context, _locale);
                 }
               },
               items: Language.languageList()
@@ -60,11 +62,18 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Text('Hello John Doe'),
-            SizedBox(
-              height: 20,
+            Text(AppLocalizations.of(context)!.email),
+            const SizedBox(
+              height: 10,
             ),
-            Text('I want my app in different languages'),
+            Text(AppLocalizations.of(context)!.changeLanguage),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(AppLocalizations.of(context)!.localeName),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
