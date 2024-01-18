@@ -1,5 +1,8 @@
 # localization_app
 
+
+Localize your flutter apps into multiple languages
+
 A new Flutter project.
 
 ## Getting Started
